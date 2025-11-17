@@ -1,0 +1,29 @@
+# Compiled classes
+*.class
+out/
+target/
+build/
+
+# Data folder (Derby database)
+data/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+
+# Binary files
+*.jar
+*.war
+*.zip
