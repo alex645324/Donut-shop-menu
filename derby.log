@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Nov 16 21:54:51 EST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-019a-8fbc-9222-000007609bf8 
+on database directory /Users/alexpozo/development/Donut-shop-menu/OakDonuts/data/OakDonutsDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2c854dc5 
+Loaded from file:/Users/alexpozo/development/Donut-shop-menu/OakDonuts/lib/derby.jar
+java.vendor=Amazon.com Inc.
+java.runtime.version=21.0.8+9-LTS
+user.dir=/Users/alexpozo/development/Donut-shop-menu/OakDonuts
+os.name=Mac OS X
+os.arch=aarch64
+os.version=15.6.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
