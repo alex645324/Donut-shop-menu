@@ -1,23 +1,24 @@
 package com.oakdonuts.models;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+// Order - represents a completed order containing items and transaction details
 public class Order {
-    private String transactionId;
-    private LocalDateTime date;
-    private List<MenuItem> items;
-    private double totalPrice;
-    private String status; // pending, completed, cancelled
+    public String transactionId;
+    public String date;
+    public List<MenuItem> items;
+    public double totalPrice;
+    public String status;
 
+    // EMPTY CONSTRUCTOR - creates order with empty item list and pending status
     public Order() {
         this.items = new ArrayList<>();
         this.status = "pending";
     }
 
-    public Order(String transactionId, LocalDateTime date, List<MenuItem> items, double totalPrice) {
+    // FULL CONSTRUCTOR - creates order with all details including item list
+    public Order(String transactionId, String date, List<MenuItem> items, double totalPrice) {
         this.transactionId = transactionId;
         this.date = date;
         this.items = items != null ? items : new ArrayList<>();
@@ -25,71 +26,8 @@ public class Order {
         this.status = "pending";
     }
 
-    // Getters and Setters
-    public String getTransactionId() {
-        return transactionId;
-    }
-
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
-    public List<MenuItem> getItems() {
-        return items;
-    }
-
-    public void setItems(List<MenuItem> items) {
-        this.items = items;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public void addItem(MenuItem item) {
-        this.items.add(item);
-        this.totalPrice += item.getPrice();
-    }
-
-    public void removeItem(MenuItem item) {
-        if (this.items.remove(item)) {
-            this.totalPrice -= item.getPrice();
-        }
-    }
-
-    public String getFormattedDate() {
-        if (date == null) return "";
-        return date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-    }
-
-    @Override
+    // TOSTRING - display order summary with ID, date, item count, and total price
     public String toString() {
-        return "Order{" +
-                "transactionId='" + transactionId + '\'' +
-                ", date=" + getFormattedDate() +
-                ", items=" + items.size() +
-                ", totalPrice=$" + String.format("%.2f", totalPrice) +
-                ", status='" + status + '\'' +
-                '}';
+        return "ID: " + transactionId + " | Date: " + date + " | Items: " + items.size() + " | $" + String.format("%.2f", totalPrice);
     }
 }
